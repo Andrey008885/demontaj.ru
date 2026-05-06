@@ -1,2 +1,0 @@
-# demontaj.ru
-demontaj
