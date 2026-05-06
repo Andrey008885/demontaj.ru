@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Демонтажные работы в Москве и МО | Снос зданий под ключ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-gray: #1a1a1a;
+  --accent-yellow: #FFD60A;
+  --accent-orange: #FF6B1A;
+  --text-white: #ffffff;
+  --text-gray: #9ca3af;
+  --border-gray: #2a2a2a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-gray);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  gap: 32px;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--text-white);
+}
+
+.phone {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-white);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 214, 10, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent-yellow);
+  color: var(--accent-yellow);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-yellow);
+  color: var(--bg-dark);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(135deg, rgba(255, 214, 10, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 107, 26, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.hero-text h1 {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 24px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-text h1 .highlight {
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-text p {
+  font-size: 20px;
+  color: var(--text-gray);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--bg-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature-badge:hover {
+  border-color: var(--accent-yellow);
+  transform: translateY(-4px);
+}
+
+.feature-badge-icon {
+  font-size: 24px;
+  color: var(--accent-yellow);
+}
+
+.feature-badge-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.feature-badge-text {
+  font-size: 13px;
+  color: var(--text-gray);
+}
+
+/* Calculator Card */
+.calculator-card {
+  background: var(--bg-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-card h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.calculator-card .subtitle {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-gray);
+  border-radius: 8px;
+  color: var(--text-white);
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent-yellow);
+}
+
+.form-group input::placeholder {
+  color: #555;
+}
+
+.price-display {
+  background: linear-gradient(135deg, rgba(255, 214, 10, 0.1), rgba(255, 107, 26, 0.1));
+  border: 1px solid var(--accent-yellow);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.price-label {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 8px;
+}
+
+.price-amount {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section Styles */
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-header h2 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.section-header p {
+  font-size: 18px;
+  color: var(--text-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--bg-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  border-color: var(--accent-yellow);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(255, 214, 10, 0.15);
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--text-gray);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.service-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-yellow);
+}
+
+/* Steps Timeline */
+.steps-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  position: relative;
+}
+
+.steps-timeline::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent-yellow), var(--accent-orange));
+  z-index: 0;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.step-number {
+  width: 80px;
+  height: 80px;
+  background: var(--bg-gray);
+  border: 3px solid var(--accent-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--accent-yellow);
+  margin: 0 auto 20px;
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.portfolio-card {
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--bg-gray);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.05);
+}
+
+.portfolio-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  filter: grayscale(20%);
+}
+
+.portfolio-placeholder.demolition-1::before {
+  background: 
+    linear-gradient(135deg, rgba(26, 26, 26, 0.3), rgba(42, 42, 42, 0.5)),
+    repeating-linear-gradient(90deg, #2a2a2a 0px, #3a3a3a 2px, #2a2a2a 4px),
+    linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+}
+
+.portfolio-placeholder.demolition-2::before {
+  background: 
+    linear-gradient(45deg, rgba(255, 107, 26, 0.1), transparent),
+    repeating-linear-gradient(0deg, #1a1a1a 0px, #2a2a2a 10px, #1a1a1a 20px),
+    radial-gradient(circle at 30% 50%, #3a3a3a, #1a1a1a);
+}
+
+.portfolio-placeholder.demolition-3::before {
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    repeating-linear-gradient(45deg, #2a2a2a 0px, #3a3a3a 15px, #2a2a2a 30px),
+    linear-gradient(135deg, #4a4a4a, #252525);
+}
+
+.portfolio-placeholder.demolition-4::before {
+  background: 
+    radial-gradient(circle at 70% 30%, rgba(255, 214, 10, 0.15), transparent),
+    repeating-linear-gradient(90deg, #252525 0px, #353535 8px, #252525 16px),
+    linear-gradient(180deg, #3a3a3a, #1a1a1a);
+}
+
+.portfolio-placeholder.demolition-5::before {
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(42, 42, 42, 0.3)),
+    repeating-linear-gradient(0deg, #2a2a2a 0px, #1a1a1a 5px, #2a2a2a 10px),
+    radial-gradient(ellipse at 50% 80%, #4a4a4a, #1a1a1a);
+}
+
+.portfolio-placeholder.demolition-6::before {
+  background: 
+    linear-gradient(to top, rgba(255, 107, 26, 0.1), transparent),
+    repeating-linear-gradient(135deg, #252525 0px, #353535 12px, #252525 24px),
+    linear-gradient(90deg, #3a3a3a, #2a2a2a, #3a3a3a);
+}
+
+.portfolio-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 64px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.portfolio-overlay h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.portfolio-overlay p {
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* Reviews */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.review-card {
+  background: var(--bg-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.review-avatar {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--bg-dark);
+}
+
+.review-info h4 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.review-stars {
+  color: var(--accent-yellow);
+  font-size: 14px;
+}
+
+.review-card p {
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-gray);
+  border: 1px solid var(--border-gray);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: var(--accent-yellow);
+}
+
+.faq-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+}
+
+.faq-answer-content {
+  padding: 0 24px 24px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  border-radius: 24px;
+  padding: 80px;
+  text-align: center;
+  margin: 100px 0;
+}
+
+.cta-section h2 {
+  font-size: 48px;
+  color: var(--bg-dark);
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  font-size: 20px;
+  color: rgba(10, 10, 10, 0.8);
+  margin-bottom: 32px;
+}
+
+.cta-section .btn {
+  background: var(--bg-dark);
+  color: var(--text-white);
+}
+
+.cta-section .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer */
+footer {
+  background: var(--bg-gray);
+  border-top: 1px solid var(--border-gray);
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, var(--accent-yellow), var(--accent-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-brand p {
+  color: var(--text-gray);
+  margin-bottom: 24px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-contact a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+  color: var(--accent-yellow);
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--accent-yellow);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--text-white);
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid var(--border-gray);
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+/* Sticky CTA Button */
+.sticky-cta {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.sticky-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sticky-cta .btn {
+  box-shadow: 0 8px 32px rgba(255, 214, 10, 0.4);
+  padding: 16px 32px;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .hero-text h1 {
+    font-size: 48px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .steps-timeline {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .steps-timeline::before {
+    display: none;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  nav {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="#" class="logo">ДЕМОНТАЖ.МСК</a>
+      <nav>
+        <a href="#services">Услуги</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="tel:88005555555" class="phone">8 800 555-55-55</a>
+      <a href="#calculator" class="btn btn-primary">Рассчитать стоимость</a>
+    </div>
+  </div>
+</header>
+
+<div id="root"></div>
+
+<div class="sticky-cta" id="stickyCta">
+  <button class="btn btn-primary" onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})">
+    📞 Заказать звонок
+  </button>
+</div>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "colorScheme": "dark-yellow",
+  "heroStyle": "split",
+  "showPricing": true,
+  "animateNumbers": true
+}/*EDITMODE-END*/;
+
+function App() {
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  
+  // Calculator state
+  const [calcType, setCalcType] = useState('apartment');
+  const [calcArea, setCalcArea] = useState('');
+  const [calcServices, setCalcServices] = useState([]);
+  const [calcPrice, setCalcPrice] = useState(0);
+  
+  // Form state
+  const [formName, setFormName] = useState('');
+  const [formPhone, setFormPhone] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  
+  // FAQ state
+  const [openFaq, setOpenFaq] = useState(null);
+  
+  // Scroll effects
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.getElementById('header');
+      const stickyCta = document.getElementById('stickyCta');
+      
+      if (window.scrollY > 100) {
+        header?.classList.add('scrolled');
+        stickyCta?.classList.add('visible');
+      } else {
+        header?.classList.remove('scrolled');
+        stickyCta?.classList.remove('visible');
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  // Calculate price
+  useEffect(() => {
+    let basePrice = 0;
+    const area = parseFloat(calcArea) || 0;
+    
+    const priceMap = {
+      'apartment': 800,
+      'house': 1200,
+      'industrial': 1500,
+      'interior': 600
+    };
+    
+    basePrice = (priceMap[calcType] || 800) * area;
+    
+    const servicesPrices = {
+      'debris': area * 200,
+      'walls': area * 400,
+      'floor': area * 350,
+      'plumbing': 15000
+    };
+    
+    calcServices.forEach(service => {
+      basePrice += servicesPrices[service] || 0;
+    });
+    
+    setCalcPrice(Math.round(basePrice));
+  }, [calcType, calcArea, calcServices]);
+  
+  const handleServiceToggle = (service) => {
+    setCalcServices(prev => 
+      prev.includes(service) 
+        ? prev.filter(s => s !== service)
+        : [...prev, service]
+    );
+  };
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    setTimeout(() => setFormSubmitted(false), 3000);
+  };
+
+  const services = [
+    { icon: '🏠', title: 'Демонтаж домов и дач', desc: 'Полный снос жилых построек с вывозом материалов', price: 'от 1200 ₽/м²' },
+    { icon: '🧱', title: 'Демонтаж бетонных конструкций', desc: 'Разрушение фундаментов, перекрытий, стен', price: 'от 1500 ₽/м³' },
+    { icon: '🏚️', title: 'Снос ветхих строений', desc: 'Безопасная разборка аварийных зданий', price: 'от 800 ₽/м²' },
+    { icon: '🚛', title: 'Вывоз строительного мусора', desc: 'Легальная утилизация на полигонах ТБО', price: 'от 200 ₽/м³' },
+    { icon: '🚜', title: 'Вывоз грунта', desc: 'Погрузка и транспортировка земли с участка', price: 'от 150 ₽/м³' },
+    { icon: '🌲', title: 'Расчистка участка', desc: 'Корчевание пней, удаление растительности', price: 'от 5000 ₽/сотка' }
+  ];
+
+  const steps = [
+    { num: '01', title: 'Заявка', desc: 'Звонок или форма на сайте' },
+    { num: '02', title: 'Выезд', desc: 'Осмотр и оценка объекта' },
+    { num: '03', title: 'Договор', desc: 'Фиксация цены и сроков' },
+    { num: '04', title: 'Работа', desc: 'Демонтаж и вывоз мусора' }
+  ];
+
+  const portfolio = [
+    { title: 'Демонтаж штукатурки', location: 'Люберцы', icon: '🏗️' },
+    { title: 'Снос перекрытий', location: 'Щербинка', icon: '⚒️' },
+    { title: 'Разбор потолка', location: 'Марьино', icon: '🔨' },
+    { title: 'Демонтаж сооружения', location: 'Виноградово', icon: '🏚️' },
+    { title: 'Снос веранды', location: 'Дмитров', icon: '🛠️' },
+    { title: 'Потолочные конструкции', location: 'Ясенево', icon: '🧰' }
+  ];
+
+  const reviews = [
+    { name: 'Ирина', initial: 'И', text: 'После покупки квартиры нужно было убрать перегородки. Работа выполнена быстро и профессионально, сотрудники вежливые, цены честные!' },
+    { name: 'Александр', initial: 'А', text: 'Делал перепланировку, снесли стену без лишней пыли и грязи. Качественно, соседи не жаловались на шум. Рекомендую!' }
+  ];
+
+  const faqs = [
+    { q: 'Как рассчитывается стоимость демонтажных работ?', a: 'Стоимость зависит от типа объекта, площади, сложности работ и необходимости вывоза мусора. Окончательную цену озвучиваем после выезда специалиста на объект.' },
+    { q: 'Какие виды зданий вы демонтируете?', a: 'Демонтируем квартиры, дома, дачи, промышленные здания, ангары, а также выполняем частичный демонтаж стен, потолков, полов и других конструкций.' },
+    { q: 'Сколько времени занимает демонтаж?', a: 'Сроки зависят от объема работ. Демонтаж квартиры занимает 3-7 дней, дома — от 1 до 3 недель. Точные сроки прописываем в договоре.' },
+    { q: 'Вы вывозите строительный мусор?', a: 'Да, вывозим весь мусор на полигоны ТБО. Имеем все необходимые лицензии на транспортировку и утилизацию отходов.' },
+    { q: 'Соблюдается ли шумовой режим?', a: 'Обязательно! Согласно закону, с 13:00 до 15:00 не производим шумных работ. График согласовываем с заказчиком.' }
+  ];
+
+  return (
+    <>
+      <TweaksPanel>
+        <TweakSection title="Визуальный стиль">
+          <TweakRadio
+            label="Цветовая схема"
+            value={tweaks.colorScheme}
+            options={[
+              { value: 'dark-yellow', label: 'Тёмная + жёлтый' },
+              { value: 'dark-orange', label: 'Тёмная + оранжевый' },
+              { value: 'light', label: 'Светлая' }
+            ]}
+            onChange={(val) => setTweak('colorScheme', val)}
+          />
+          <TweakRadio
+            label="Стиль Hero"
+            value={tweaks.heroStyle}
+            options={[
+              { value: 'split', label: 'Сплит (текст + форма)' },
+              { value: 'centered', label: 'По центру' },
+              { value: 'full', label: 'На весь экран' }
+            ]}
+            onChange={(val) => setTweak('heroStyle', val)}
+          />
+        </TweakSection>
+        
+        <TweakSection title="Контент">
+          <TweakToggle
+            label="Показывать цены"
+            value={tweaks.showPricing}
+            onChange={(val) => setTweak('showPricing', val)}
+          />
+          <TweakToggle
+            label="Анимация цифр"
+            value={tweaks.animateNumbers}
+            onChange={(val) => setTweak('animateNumbers', val)}
+          />
+        </TweakSection>
+      </TweaksPanel>
+
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="container">
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1>
+                Демонтажные работы <br/>
+                <span className="highlight">любой сложности</span>
+              </h1>
+              <p>
+                Надёжно, быстро и безопасно разбираем строения в Москве и МО. 
+                Работаем по договору с вывозом мусора.
+              </p>
+              <div style={{ display: 'flex', gap: '16px', marginBottom: '48px' }}>
+                <button className="btn btn-primary" onClick={() => document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})}>
+                  Рассчитать стоимость
+                </button>
+                <a href="tel:+79645034433" className="btn btn-secondary">
+                  Позвонить сейчас
+                </a>
+              </div>
+              
+              <div className="hero-features">
+                <div className="feature-badge">
+                  <div className="feature-badge-icon">📋</div>
+                  <div className="feature-badge-title">По договору</div>
+                  <div className="feature-badge-text">Фиксируем цену</div>
+                </div>
+                <div className="feature-badge">
+                  <div className="feature-badge-icon">🔇</div>
+                  <div className="feature-badge-title">Без шума</div>
+                  <div className="feature-badge-text">13:00-15:00 тихо</div>
+                </div>
+                <div className="feature-badge">
+                  <div className="feature-badge-icon">♻️</div>
+                  <div className="feature-badge-title">Легально</div>
+                  <div className="feature-badge-text">Вывозим мусор</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="calculator-card" id="calculator">
+              <h3>Калькулятор стоимости</h3>
+              <p className="subtitle">Получите расчёт за 1 минуту</p>
+              
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label>Тип объекта</label>
+                  <select value={calcType} onChange={(e) => setCalcType(e.target.value)}>
+                    <option value="apartment">Квартира</option>
+                    <option value="house">Дом / Дача</option>
+                    <option value="industrial">Промышленный объект</option>
+                    <option value="interior">Внутренний демонтаж</option>
+                  </select>
+                </div>
+                
+                <div className="form-group">
+                  <label>Площадь (м²)</label>
+                  <input 
+                    type="number" 
+                    placeholder="Например, 50"
+                    value={calcArea}
+                    onChange={(e) => setCalcArea(e.target.value)}
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label>Дополнительные услуги</label>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    {[
+                      { id: 'debris', label: 'Вывоз мусора' },
+                      { id: 'walls', label: 'Демонтаж стен' },
+                      { id: 'floor', label: 'Демонтаж пола' },
+                      { id: 'plumbing', label: 'Демонтаж сантехники' }
+                    ].map(service => (
+                      <label key={service.id} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+                        <input 
+                          type="checkbox"
+                          checked={calcServices.includes(service.id)}
+                          onChange={() => handleServiceToggle(service.id)}
+                          style={{ width: 'auto' }}
+                        />
+                        <span style={{ fontSize: '14px', color: 'var(--text-gray)' }}>{service.label}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+                
+                {tweaks.showPricing && calcArea && (
+                  <div className="price-display">
+                    <div className="price-label">Примерная стоимость</div>
+                    <div className="price-amount">
+                      {calcPrice.toLocaleString('ru')} ₽
+                    </div>
+                  </div>
+                )}
+                
+                <div className="form-group">
+                  <label>Ваше имя</label>
+                  <input 
+                    type="text" 
+                    placeholder="Иван"
+                    value={formName}
+                    onChange={(e) => setFormName(e.target.value)}
+                    required
+                  />
+                </div>
+                
+                <div className="form-group">
+                  <label>Телефон</label>
+                  <input 
+                    type="tel" 
+                    placeholder="+7 (999) 123-45-67"
+                    value={formPhone}
+                    onChange={(e) => setFormPhone(e.target.value)}
+                    required
+                  />
+                </div>
+                
+                <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
+                  {formSubmitted ? '✓ Заявка отправлена!' : 'Узнать точную стоимость'}
+                </button>
+                
+                <p style={{ fontSize: '12px', color: 'var(--text-gray)', marginTop: '12px', textAlign: 'center' }}>
+                  Менеджер свяжется с вами в течение 15 минут
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services">
+        <div className="container">
+          <div className="section-header">
+            <h2>Наши услуги</h2>
+            <p>Полный спектр демонтажных работ с вывозом мусора</p>
+          </div>
+          <div className="services-grid">
+            {services.map((service, idx) => (
+              <div key={idx} className="service-card">
+                <div className="service-icon">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+                {tweaks.showPricing && <div className="service-price">{service.price}</div>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Steps Section */}
+      <section style={{ background: 'var(--bg-gray)' }}>
+        <div className="container">
+          <div className="section-header">
+            <h2>Как мы работаем</h2>
+            <p>Прозрачный процесс от заявки до результата</p>
+          </div>
+          <div className="steps-timeline">
+            {steps.map((step, idx) => (
+              <div key={idx} className="step">
+                <div className="step-number">{step.num}</div>
+                <h3>{step.title}</h3>
+                <p>{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio">
+        <div className="container">
+          <div className="section-header">
+            <h2>Наши работы</h2>
+            <p>Реализованные проекты по Москве и области</p>
+          </div>
+          <div className="portfolio-grid">
+            {portfolio.map((item, idx) => (
+              <div key={idx} className="portfolio-card">
+                <div className={`portfolio-placeholder demolition-${idx + 1}`}>
+                  <div className="portfolio-icon">{item.icon}</div>
+                </div>
+                <div className="portfolio-overlay">
+                  <h3>{item.title}</h3>
+                  <p>{item.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section id="reviews" style={{ background: 'var(--bg-gray)' }}>
+        <div className="container">
+          <div className="section-header">
+            <h2>Отзывы клиентов</h2>
+            <p>Нам доверяют сотни заказчиков</p>
+          </div>
+          <div className="reviews-grid">
+            {reviews.map((review, idx) => (
+              <div key={idx} className="review-card">
+                <div className="review-header">
+                  <div className="review-avatar">{review.initial}</div>
+                  <div className="review-info">
+                    <h4>{review.name}</h4>
+                    <div className="review-stars">★★★★★</div>
+                  </div>
+                </div>
+                <p>{review.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq">
+        <div className="container">
+          <div className="section-header">
+            <h2>Часто задаваемые вопросы</h2>
+          </div>
+          <div className="faq-list">
+            {faqs.map((faq, idx) => (
+              <div 
+                key={idx} 
+                className={`faq-item ${openFaq === idx ? 'open' : ''}`}
+              >
+                <button 
+                  className="faq-question"
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                >
+                  <span>{faq.q}</span>
+                  <span className="faq-icon">+</span>
+                </button>
+                <div className="faq-answer">
+                  <div className="faq-answer-content">{faq.a}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <div className="container">
+        <div className="cta-section">
+          <h2>Готовы начать?</h2>
+          <p>Оставьте заявку и получите бесплатный выезд специалиста</p>
+          <button 
+            className="btn"
+            onClick={() => document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})}
+          >
+            Заказать расчёт
+          </button>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer id="contacts">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-brand">
+              <h3>ДЕМОНТАЖ.МСК</h3>
+              <p>Профессиональные демонтажные работы в Москве и Московской области</p>
+              <div className="footer-contact">
+                <a href="tel:88005555555">8 800 555-55-55</a>
+                <a href="mailto:info@demontazh-msk.ru">info@demontazh-msk.ru</a>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h4>Услуги</h4>
+              <div className="footer-links">
+                <a href="#services">Демонтаж квартир</a>
+                <a href="#services">Снос домов</a>
+                <a href="#services">Алмазная резка</a>
+                <a href="#services">Вывоз мусора</a>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h4>Компания</h4>
+              <div className="footer-links">
+                <a href="#portfolio">Портфолио</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contacts">Контакты</a>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h4>Время работы</h4>
+              <p style={{ color: 'var(--text-gray)', fontSize: '14px' }}>
+                Пн-Вс: 9:00 - 21:00<br/>
+                Без выходных
+              </p>
+              <p style={{ color: 'var(--text-gray)', fontSize: '14px', marginTop: '16px' }}>
+                г. Москва,<br/>
+                Краснопресненская наб., 4
+              </p>
+            </div>
+          </div>
+          
+          <div className="footer-bottom">
+            © 2026 Демонтаж.МСК — Все права защищены
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+
+</body>
+</html>
